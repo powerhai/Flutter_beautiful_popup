@@ -182,33 +182,45 @@ abstract class BeautifulPopupTemplate extends StatefulWidget {
         ),
       );
       final minHeight = 40.0 - (outline ? 2 : 0);
-      return RaisedButton(
-        color: Colors.transparent,
-        elevation: elevation,
-        highlightElevation: 0,
-        splashColor: Colors.transparent,
-        child: Ink(
-          decoration: decoration,
+      return ElevatedButton(
+          // color: Colors.transparent,
+          // elevation: elevation,
+          // highlightElevation: 0,
+          // splashColor: Colors.transparent,
+          // child: Ink(
+          //   decoration: decoration,
+          //   child: Container(
+          //     constraints: BoxConstraints(
+          //       minWidth: 100,
+          //       minHeight: minHeight,
+          //     ),
+          //     alignment: Alignment.center,
+          //     child: Text(
+          //       label,
+          //       style: TextStyle(
+          //         color: labelColor,
+          //       ).merge(labelStyle),
+          //     ),
+          //   ),
+          // ),
+          // padding: EdgeInsets.all(0),
+          // shape: RoundedRectangleBorder(
+          //   borderRadius: BorderRadius.circular(50),
+          // ),
+          style: ButtonStyle(),
+          onPressed: onPressed,
           child: Container(
-            constraints: BoxConstraints(
-              minWidth: 100,
-              minHeight: minHeight,
-            ),
-            alignment: Alignment.center,
-            child: Text(
-              label,
-              style: TextStyle(
-                color: labelColor,
-              ).merge(labelStyle),
-            ),
-          ),
-        ),
-        padding: EdgeInsets.all(0),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(50),
-        ),
-        onPressed: onPressed,
-      );
+              constraints: BoxConstraints(
+                minWidth: 100,
+                minHeight: minHeight,
+              ),
+              alignment: Alignment.center,
+              child: Text(
+                label,
+                style: TextStyle(
+                  color: labelColor,
+                ).merge(labelStyle),
+              )));
     };
   }
 
@@ -231,7 +243,6 @@ class BeautifulPopupTemplateState extends State<BeautifulPopupTemplate> {
                   4 -
               20;
           return Stack(
-            overflow: Overflow.visible,
             children: <Widget>[
               Positioned(
                 child: Container(
@@ -264,7 +275,6 @@ class BeautifulPopupTemplateState extends State<BeautifulPopupTemplate> {
             height: widget.height,
             width: widget.width,
             child: Stack(
-              overflow: Overflow.visible,
               children: widget.layout,
             ),
           ),

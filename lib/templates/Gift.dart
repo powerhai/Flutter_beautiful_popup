@@ -43,7 +43,26 @@ class TemplateGift extends BeautifulPopupTemplate {
         ),
       );
       final minHeight = 40.0 - (outline ? 4 : 0);
-      return RaisedButton(
+      return ElevatedButton(
+        onPressed: onPressed,
+        child: Container(
+          constraints: BoxConstraints(
+            minWidth: 100,
+            minHeight: minHeight,
+          ),
+          alignment: Alignment.center,
+          child: Text(
+            label,
+            style: TextStyle(
+              color: Colors.white.withOpacity(0.95),
+              fontWeight: FontWeight.bold,
+            ).merge(labelStyle),
+          ),
+        ),
+      );
+
+      /*
+      RaisedButton(
         color: Colors.transparent,
         elevation: elevation,
         highlightElevation: 0,
@@ -71,6 +90,8 @@ class TemplateGift extends BeautifulPopupTemplate {
         ),
         onPressed: onPressed,
       );
+
+      */
     };
   }
 
